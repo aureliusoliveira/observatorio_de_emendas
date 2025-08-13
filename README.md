@@ -1,2 +1,2 @@
-# observatorio_de_emendas
+# Observatório de Emendas
 Repositório do Observatorio de Emendas.
