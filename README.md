@@ -2,7 +2,7 @@
 
 **Observatório de Emendas** é uma iniciativa de código aberto que rastreia o caminho das emendas parlamentares federais no Brasil — da origem ao destino final — com o objetivo de fortalecer a transparência pública e o controle social.
 
-> Transparência não é apenas um direito — é uma ferramenta de cidadania.
+> Transparência não é apenas um direito — é uma ferramenta de cidadania e defesa da democracia.
 
 ---
 
