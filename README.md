@@ -62,14 +62,14 @@ streamlit run app/dashboard.py
 
 Este projeto é mantido de forma aberta e transparente por cidadãos preocupados com a boa gestão dos recursos públicos.
 
-Leia o [MANIFESTO](./MANIFESTO.md) para entender os princípios e motivações do Observatório de Emendas.
+Leia o [MANIFESTO](./docs/MANIFESTO.md) para entender os princípios e motivações do Observatório de Emendas.
 
 ---
 
 ## 🤝 Contribua
 
-- Veja as tarefas abertas no [Project Kanban](https://github.com/aureliusoliveira/observatorio-de-emendas/projects).
-- Leia o [CONTRIBUTING.md](./CONTRIBUTING.md).
+- Veja as tarefas abertas no [Project Kanban](https://github.com/users/aureliusoliveira/projects/3).
+- Leia o [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
 - Participe da comunidade ou envie suas sugestões via GitHub Issues.
 
 ---
