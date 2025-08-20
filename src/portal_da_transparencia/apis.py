@@ -40,14 +40,29 @@ class EmendasParlamentaresDocumentosAPI(PortalDaTransparenciaAPI):
    def _build_url(self,  codigo: int=None) -> str:
        return f"{self.base_endpoint}/emendas/documentos/{codigo}"
 
+class PessoaFisicaAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/pessoa-fisica"
 
+class PessoaJuridicaAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/pessoa-juridica"
 
-# if __name__ == "__main__":
-#     headers = {'chave-api-dados':  os.getenv('chave-api-dados')}
-#     params = {'pagina': 2, 'Ano': 2025}
-#     emendas = EmendasParlamentaresAPI("emendas", headers=headers)
-#     print(emendas.get_data(params)[0])
-    
+class ConveniosDoPoderExecutivoFederalAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/convenios"
+
+class ConveniosDoPoderExecutivoFederalIdAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/convenios/id"
+
+class DespesasPublicasPorOrgaoAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/despesas/por-orgao"
+
+class DespesasPublicasPorFuncionalProgramaticaAPI(PortalDaTransparenciaAPI):
+   def _build_url(self) -> str:
+       return f"{self.base_endpoint}/despesas/por-funcional-programatica"
 
 
 

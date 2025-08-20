@@ -1,10 +1,15 @@
 import pytest
 import requests
 from unittest.mock import patch, MagicMock
-from portal_da_transparencia.apis import \
-    PortalDaTransparenciaAPI,\
-    EmendasParlamentaresAPI,\
-    EmendasParlamentaresDocumentosAPI
+from portal_da_transparencia.apis import PortalDaTransparenciaAPI,\
+      EmendasParlamentaresAPI,\
+      EmendasParlamentaresDocumentosAPI,\
+      PessoaFisicaAPI,\
+      PessoaJuridicaAPI,\
+      ConveniosDoPoderExecutivoFederalAPI,\
+      ConveniosDoPoderExecutivoFederalIdAPI,\
+      DespesasPublicasPorOrgaoAPI,\
+      DespesasPublicasPorFuncionalProgramaticaAPI
 
 @pytest.fixture
 def fake_env(monkeypatch):
@@ -72,3 +77,27 @@ class TestEmendasParlamentaresDocumentosAPI:
     def test_build_url(self):
         codigo = 123
         assert EmendasParlamentaresDocumentosAPI()._build_url(codigo) == 'https://api.portaldatransparencia.gov.br/api-de-dados/emendas/documentos/123'
+
+class TestPessoaFisicaAPI:
+    def test_build_url(self) -> str:
+        assert PessoaFisicaAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/pessoa-fisica"
+
+class TestPessoaJuridicaAPI:
+    def test_build_url(self) -> str:
+        assert PessoaJuridicaAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/pessoa-juridica"
+
+class TestConveniosDoPoderExecutivoFederalAPI:
+    def test_build_url(self) -> str:
+        assert ConveniosDoPoderExecutivoFederalAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/convenios"
+
+class TestConveniosDoPoderExecutivoFederalIdAPI:
+    def test_build_url(self) -> str:
+        assert ConveniosDoPoderExecutivoFederalIdAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/convenios/id"
+
+class TestDespesasPublicasPorOrgaoAPI:
+    def test_build_url(self) -> str:
+        assert DespesasPublicasPorOrgaoAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/despesas/por-orgao"
+
+class TestDespesasPublicasPorFuncionalProgramaticaAPI(PortalDaTransparenciaAPI):
+    def test_build_url(self) -> str:
+        assert DespesasPublicasPorFuncionalProgramaticaAPI()._build_url() == "https://api.portaldatransparencia.gov.br/api-de-dados/despesas/por-funcional-programatica"
