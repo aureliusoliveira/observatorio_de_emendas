@@ -1,6 +1,4 @@
-from portal_da_transparencia.emendas_parlamentares.emendas_api import \
-                                                    EmendasParlamentaresAPI,\
-                                                    EmendasParlamentaresDocumentosAPI
+from ..emendas_api import EmendasParlamentaresAPI, EmendasParlamentaresDocumentosAPI
 
 class TestEmendasParlamentaresAPI:
     def test_build_url(self):

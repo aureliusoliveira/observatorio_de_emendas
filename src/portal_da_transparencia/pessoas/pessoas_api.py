@@ -1,4 +1,4 @@
-from portal_da_transparencia.contrato_api import PortalDaTransparenciaAPI
+from ..contrato_api import PortalDaTransparenciaAPI
 
 class PessoaFisicaAPI(PortalDaTransparenciaAPI):
    def _build_url(self) -> str:

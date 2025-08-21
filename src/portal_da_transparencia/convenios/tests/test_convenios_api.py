@@ -1,6 +1,4 @@
-from portal_da_transparencia.convenios.convenios_api import \
-                                            ConveniosDoPoderExecutivoFederalAPI,\
-                                            ConveniosDoPoderExecutivoFederalIdAPI
+from ..convenios_api import ConveniosDoPoderExecutivoFederalAPI, ConveniosDoPoderExecutivoFederalIdAPI
       
 class TestConveniosDoPoderExecutivoFederalAPI:
     def test_build_url(self) -> str:

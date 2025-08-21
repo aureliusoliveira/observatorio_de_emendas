@@ -1,7 +1,7 @@
 import pytest
 import requests
 from unittest.mock import patch, MagicMock
-from portal_da_transparencia.contrato_api import PortalDaTransparenciaAPI
+from ..contrato_api import PortalDaTransparenciaAPI
 
 @pytest.fixture
 def fake_env(monkeypatch):

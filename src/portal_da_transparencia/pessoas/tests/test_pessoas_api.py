@@ -1,4 +1,4 @@
-from portal_da_transparencia.pessoas.pessoas_api import PessoaFisicaAPI, PessoaJuridicaAPI
+from ..pessoas_api import PessoaFisicaAPI, PessoaJuridicaAPI
 
 class TestPessoaFisicaAPI:
     def test_build_url(self) -> str:
