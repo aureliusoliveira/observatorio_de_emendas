@@ -2,7 +2,7 @@
 import json
 import pytest
 
-from src.portal_da_transparencia.writers import JSONWriter, DataTypeNotSupported  # ajuste o caminho se necessário
+from src.utils.writers import JSONWriter, DataTypeNotSupported  # ajuste o caminho se necessário
 
 @pytest.fixture
 def json_writer(tmp_path):
