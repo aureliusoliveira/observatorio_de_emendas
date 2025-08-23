@@ -1,4 +1,4 @@
-from ..despesas_api import DespesasPublicasPorOrgaoAPI, DespesasPublicasPorFuncionalProgramaticaAPI
+from src.portal_da_transparencia.apis.despesas_publicas.despesas_api import DespesasPublicasPorOrgaoAPI, DespesasPublicasPorFuncionalProgramaticaAPI
 
 class TestDespesasPublicasPorOrgaoAPI:
     def test_build_url(self) -> str:

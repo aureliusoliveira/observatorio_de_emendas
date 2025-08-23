@@ -1,5 +1,5 @@
-from ..convenios_api import ConveniosDoPoderExecutivoFederalAPI, ConveniosDoPoderExecutivoFederalIdAPI
-      
+from src.portal_da_transparencia.apis.convenios.convenios_api import ConveniosDoPoderExecutivoFederalAPI, ConveniosDoPoderExecutivoFederalIdAPI
+
 class TestConveniosDoPoderExecutivoFederalAPI:
     def test_build_url(self) -> str:
         assert ConveniosDoPoderExecutivoFederalAPI()._build_url() == \

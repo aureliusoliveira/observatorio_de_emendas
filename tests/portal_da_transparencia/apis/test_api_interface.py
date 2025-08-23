@@ -1,14 +1,15 @@
 import pytest
 import requests
 from unittest.mock import patch, MagicMock
-from ..contrato_api import PortalDaTransparenciaAPI
+from src.portal_da_transparencia.apis.api_interface import PortalDaTransparenciaAPI
+
 
 @pytest.fixture
 def fake_env(monkeypatch):
     monkeypatch.setenv("chave-api-dados", "mocked-chave-api-dados")
 
 @pytest.fixture()
-@patch("portal_da_transparencia.contrato_api.PortalDaTransparenciaAPI.__abstractmethods__", set())
+@patch("src.portal_da_transparencia.apis.api_interface.PortalDaTransparenciaAPI.__abstractmethods__", set())
 def fixture_portal_da_transparencia_api(fake_env):
     return PortalDaTransparenciaAPI()
 
@@ -34,7 +35,7 @@ def mocked_requests_get(**kwargs):
 
 class TestPortalDaTransparenciaAPI:
 
-    @patch("portal_da_transparencia.contrato_api.requests.get")
+    @patch("src.portal_da_transparencia.apis.api_interface.requests.get")
     def test_get_data_ok(self, mock_get, fixture_portal_da_transparencia_api):
         mock_resp = MagicMock()
         mock_resp.status_code = 200
@@ -49,13 +50,13 @@ class TestPortalDaTransparenciaAPI:
         assert resp == {"ok": True}
 
 
-    @patch("portal_da_transparencia.contrato_api.requests.get", side_effect=mocked_requests_get)
-    @patch("portal_da_transparencia.contrato_api.PortalDaTransparenciaAPI._build_url", return_value='valid_endpoint')
+    @patch("src.portal_da_transparencia.apis.api_interface.requests.get", side_effect=mocked_requests_get)
+    @patch("src.portal_da_transparencia.apis.api_interface.PortalDaTransparenciaAPI._build_url", return_value='valid_endpoint')
     def test_get_data_with_valid_endpoint(self, mock_build_url, mock_requests, fixture_portal_da_transparencia_api):
        assert fixture_portal_da_transparencia_api.get_data() == {"foo": "bar"}
 
-    @patch("portal_da_transparencia.contrato_api.requests.get", side_effect=mocked_requests_get)
-    @patch("portal_da_transparencia.contrato_api.PortalDaTransparenciaAPI._build_url", return_value="invalid_endpoint")
+    @patch("src.portal_da_transparencia.apis.api_interface.requests.get", side_effect=mocked_requests_get)
+    @patch("src.portal_da_transparencia.apis.api_interface.PortalDaTransparenciaAPI._build_url", return_value="invalid_endpoint")
     def test_get_data_with_invalid_endpoint(self, mock_build_url, mock_requests, fixture_portal_da_transparencia_api):
        with pytest.raises(Exception):
            fixture_portal_da_transparencia_api.get_data()

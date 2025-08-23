@@ -1,4 +1,4 @@
-from ..contrato_api import PortalDaTransparenciaAPI
+from ..api_interface import PortalDaTransparenciaAPI
 
 class ConveniosDoPoderExecutivoFederalAPI(PortalDaTransparenciaAPI):
    def _build_url(self) -> str:
