@@ -60,3 +60,4 @@ class TestPortalDaTransparenciaAPI:
     def test_get_data_with_invalid_endpoint(self, mock_build_url, mock_requests, fixture_portal_da_transparencia_api):
        with pytest.raises(Exception):
            fixture_portal_da_transparencia_api.get_data()
+    
