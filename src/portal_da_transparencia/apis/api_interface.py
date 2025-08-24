@@ -2,6 +2,9 @@ from abc import ABC, abstractmethod
 from typing import Dict
 from dotenv import load_dotenv
 import os
+import ratelimit
+import requests
+from backoff import on_exception, expo
 
 import logging
 import requests
@@ -20,7 +23,10 @@ class PortalDaTransparenciaAPI(ABC):
     @abstractmethod
     def _build_url(self) -> str:
         pass
-
+    
+    @on_exception(expo, ratelimit.exception.RateLimitException, max_tries=10)
+    @ratelimit.limits(calls=29, period=30)
+    @on_exception(expo, requests.exceptions.HTTPError, max_tries=10)
     def get_data(self, **params) -> Dict:
         endpoint = self._build_url()
         logger.info(f"Getting data from endpoint: {endpoint}")
