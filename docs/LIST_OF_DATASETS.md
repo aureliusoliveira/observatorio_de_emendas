@@ -6,6 +6,8 @@
 - **Emendas parlamentares:** endpoint `emendas` retorna emendas por ano, código do autor, órgão, etc. Os documentos de cada emenda são obtidos em `emendas/documentos/{codigo}`.
 - **Convênios:** a API de convênios permite filtrar por número, número de processo ou código; os principais endpoints são `/convenios`, `/convenios/{id}` e `/convenios/numero-processo`.
 - **Despesas:** para examinar execução das emendas nos órgãos e funções de governo, use `/despesas/por-orgao` e `/despesas/por-funcional-programatica`.
+- **Pessoas:** informações sobre CPF (`/pessoa-fisica`) e CNPJ (`/pessoa-juridica`).
+- **Órgãos:** consulta de órgaos cadastrados no Sistema Integrado de Administração de Pessoal (SIAPE)(`orgaos-siape`) e no Sistema Integrado de Administração Financeira do Governo Federal (SIAFI)(`orgaos-siafi`).
 - **Requisito de chave:** esses endpoints exigem cadastro de chave de API gratuita. Sem a chave, apenas a lista de endpoints via Swagger fica acessível; os dados não são retornados.
 
 ### SIOP – Emendas Individuais Impositivas
