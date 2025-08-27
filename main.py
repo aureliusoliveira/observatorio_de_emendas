@@ -18,15 +18,15 @@ from src.portal_da_transparencia.apis.pessoas.pessoas_api \
 
 
 
-api = EmendasParlamentaresAPI()
+api = ConveniosDoPoderExecutivoFederalIdAPI()
 
 def main():
     responses = []
     for page in range(1,2):
         response = api.get_data(pagina=page)
         responses.append(response)
-    for emenda in responses:
-        print(emenda[0].get('nomeAutor'))
+    for convenio in responses:
+        print(convenio[0].get('nomeAutor'))
 
 
 if __name__ == "__main__":

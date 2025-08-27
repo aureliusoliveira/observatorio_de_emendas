@@ -15,12 +15,12 @@ class TestConveniosDoPoderExecutivoFederalAPI:
         assert 'id' in response[0]
 
 class TestConveniosDoPoderExecutivoFederalIdAPI:
-    def test_build_url(self, convenios_id_endpoint) -> str:
-        assert ConveniosDoPoderExecutivoFederalAPI()._build_url() == \
+    def test_build_url(self) -> str:
+        assert ConveniosDoPoderExecutivoFederalIdAPI()._build_url() == \
             "https://api.portaldatransparencia.gov.br/api-de-dados/convenios/id"
     
     def test_get_data_integration_response_ok(self):
-        id = 325211231
+        id = 325659225
         response = ConveniosDoPoderExecutivoFederalIdAPI().get_data(id=id)
 
-        assert response['id'] == 325211231
+        assert response['id'] == 325659225
