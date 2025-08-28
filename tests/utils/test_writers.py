@@ -1,10 +1,11 @@
 # test_writer.py
 import json
+
 import pytest
 
 from src.utils.writers import (
-    JSONWriter,
     DataTypeNotSupported,
+    JSONWriter,
 )  # ajuste o caminho se necessário
 
 

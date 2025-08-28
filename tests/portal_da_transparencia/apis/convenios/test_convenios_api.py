@@ -5,7 +5,7 @@ from src.portal_da_transparencia.apis.convenios.convenios_api import (
 
 
 class TestConveniosDoPoderExecutivoFederalAPI:
-    def test_build_url(self) -> str:
+    def test_build_url(self):
         assert (
             ConveniosDoPoderExecutivoFederalAPI()._build_url()
             == "https://api.portaldatransparencia.gov.br/api-de-dados/convenios"
@@ -20,7 +20,7 @@ class TestConveniosDoPoderExecutivoFederalAPI:
 
 
 class TestConveniosDoPoderExecutivoFederalIdAPI:
-    def test_build_url(self) -> str:
+    def test_build_url(self):
         assert (
             ConveniosDoPoderExecutivoFederalIdAPI()._build_url()
             == "https://api.portaldatransparencia.gov.br/api-de-dados/convenios/id"
