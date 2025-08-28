@@ -1,9 +1,11 @@
 from ..api_interface import PortalDaTransparenciaAPI
 
+
 class EmendasParlamentaresAPI(PortalDaTransparenciaAPI):
-   def _build_url(self) -> str:
-       return f"{self.base_endpoint}/emendas"
+    def _build_url(self) -> str:
+        return f"{self.base_endpoint}/emendas"
+
 
 class EmendasParlamentaresDocumentosAPI(PortalDaTransparenciaAPI):
-   def _build_url(self,  codigo: int=None) -> str:
-       return f"{self.base_endpoint}/emendas/documentos/{codigo}"
+    def _build_url(self, codigo: int = None) -> str:
+        return f"{self.base_endpoint}/emendas/documentos/{codigo}"

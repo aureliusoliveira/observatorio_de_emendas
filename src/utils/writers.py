@@ -11,10 +11,12 @@ class DataTypeNotSupported(Exception):
 
 class Writer(ABC):
     """Interface for all writers."""
+
     def __init__(self):
         pass
+
     @abstractmethod
-    def write(self, data: list|dict, *args, **kwargs) -> None:
+    def write(self, data: list | dict, *args, **kwargs) -> None:
         raise NotImplementedError("Subclasses must implement write() method")
 
 
@@ -23,11 +25,11 @@ class JSONWriter(Writer):
         self.filepath = filepath
 
     def _write_row(self, row: dict):
-        with open(file=self.filepath, mode='a') as jout:
+        with open(file=self.filepath, mode="a") as jout:
             json.dump(row, jout)
-            jout.write('\n')
-    
-    def write(self, data: list|dict, *args, **kwargs) -> None:
+            jout.write("\n")
+
+    def write(self, data: list | dict, *args, **kwargs) -> None:
         if isinstance(data, dict):
             self._write_row(data)
         elif isinstance(data, list):

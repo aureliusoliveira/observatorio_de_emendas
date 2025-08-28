@@ -2,7 +2,11 @@
 import json
 import pytest
 
-from src.utils.writers import JSONWriter, DataTypeNotSupported  # ajuste o caminho se necessário
+from src.utils.writers import (
+    JSONWriter,
+    DataTypeNotSupported,
+)  # ajuste o caminho se necessário
+
 
 @pytest.fixture
 def json_writer(tmp_path):
@@ -41,7 +45,7 @@ def test_jsonwriter_write_list_of_dicts_appends_lines(json_writer):
 
     lines = read_lines(outpath)
     assert len(lines) == 4
-    assert [json.loads(l)["id"] for l in lines] == [1, 2, 3, 4]
+    assert [json.loads(line)["id"] for line in lines] == [1, 2, 3, 4]
 
 
 def test_jsonwriter_write_unsupported_type_raises(json_writer):

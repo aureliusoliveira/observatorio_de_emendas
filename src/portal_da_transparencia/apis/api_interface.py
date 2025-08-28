@@ -7,7 +7,6 @@ import requests
 from backoff import on_exception, expo
 
 import logging
-import requests
 
 load_dotenv()
 
@@ -17,13 +16,13 @@ logging.basicConfig(level=logging.INFO)
 
 class PortalDaTransparenciaAPI(ABC):
     def __init__(self) -> None:
-        self.base_endpoint = "https://api.portaldatransparencia.gov.br/api-de-dados" #TODO: Mover para um arquivo de configuração e pegar o endpoint de lá
-        self.headers = {'chave-api-dados': os.getenv('chave-api-dados')}    
+        self.base_endpoint = "https://api.portaldatransparencia.gov.br/api-de-dados"  # TODO: Mover para um arquivo de configuração e pegar o endpoint de lá
+        self.headers = {"chave-api-dados": os.getenv("chave-api-dados")}
 
     @abstractmethod
     def _build_url(self) -> str:
         pass
-    
+
     @on_exception(expo, ratelimit.exception.RateLimitException, max_tries=10)
     @ratelimit.limits(calls=29, period=30)
     @on_exception(expo, requests.exceptions.HTTPError, max_tries=10)
