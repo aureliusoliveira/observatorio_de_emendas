@@ -1,4 +1,4 @@
-from src.portal_da_transparencia.apis.emendas_parlamentares.emendas_api import (
+from src.portal_da_transparencia.apis.emendas import (
     EmendasParlamentaresAPI,
     EmendasParlamentaresDocumentosAPI,
 )

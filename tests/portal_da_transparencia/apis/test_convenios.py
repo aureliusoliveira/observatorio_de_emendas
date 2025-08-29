@@ -1,4 +1,4 @@
-from src.portal_da_transparencia.apis.convenios.convenios_api import (
+from src.portal_da_transparencia.apis.convenios import (
     ConveniosDoPoderExecutivoFederalAPI,
     ConveniosDoPoderExecutivoFederalIdAPI,
 )

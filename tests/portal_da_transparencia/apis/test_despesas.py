@@ -1,11 +1,11 @@
-from src.portal_da_transparencia.apis.despesas_publicas.despesas_api import (
-    DespesasPublicasPorOrgaoAPI,
+from src.portal_da_transparencia.apis.despesas import (
     DespesasPublicasPorFuncionalProgramaticaAPI,
+    DespesasPublicasPorOrgaoAPI,
 )
 
 
 class TestDespesasPublicasPorOrgaoAPI:
-    def test_build_url(self) -> str:
+    def test_build_url(self):
         assert (
             DespesasPublicasPorOrgaoAPI()._build_url()
             == "https://api.portaldatransparencia.gov.br/api-de-dados/despesas/por-orgao"
@@ -17,7 +17,7 @@ class TestDespesasPublicasPorOrgaoAPI:
 
 
 class TestDespesasPublicasPorFuncionalProgramaticaAPI:
-    def test_build_url(self) -> str:
+    def test_build_url(self):
         assert (
             DespesasPublicasPorFuncionalProgramaticaAPI()._build_url()
             == "https://api.portaldatransparencia.gov.br/api-de-dados/despesas/por-funcional-programatica"

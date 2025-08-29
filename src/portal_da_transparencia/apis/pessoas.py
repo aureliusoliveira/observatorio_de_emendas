@@ -1,4 +1,4 @@
-from ..api_interface import PortalDaTransparenciaAPI
+from .api_interface import PortalDaTransparenciaAPI
 
 
 class PessoaFisicaAPI(PortalDaTransparenciaAPI):
