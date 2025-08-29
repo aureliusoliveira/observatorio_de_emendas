@@ -1,4 +1,4 @@
-from ..api_interface import PortalDaTransparenciaAPI
+from .api_interface import PortalDaTransparenciaAPI
 
 
 class EmendasParlamentaresAPI(PortalDaTransparenciaAPI):
@@ -7,5 +7,5 @@ class EmendasParlamentaresAPI(PortalDaTransparenciaAPI):
 
 
 class EmendasParlamentaresDocumentosAPI(PortalDaTransparenciaAPI):
-    def _build_url(self, codigo: int = None) -> str:
+    def _build_url(self, codigo: int) -> str:
         return f"{self.base_endpoint}/emendas/documentos/{codigo}"
